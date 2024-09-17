@@ -4,7 +4,7 @@ import NavItem from "./NavItem"
 export default function Navigation (){
 
 const NavLinks = navData.map((item) => {
-    return <NavItem item={item} key={item.id}/>
+    return <NavItem {...item} key={item.id}/>
 })
 
     return <nav>

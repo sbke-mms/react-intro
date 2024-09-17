@@ -1,9 +1,9 @@
 import React from 'react'
 
-function NavItem({item}) {
+function NavItem({title, href}) {
   return <li>
-        <a href={item.href}>
-            {item.title}
+        <a href={href}>
+            {title}
         </a>
     </li>
 }
