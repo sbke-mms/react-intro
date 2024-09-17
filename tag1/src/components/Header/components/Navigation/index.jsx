@@ -1,9 +1,18 @@
+import { navData } from "../../../../utils/data/navData"
+
 export default function Navigation (){
+
+const NavLinks = navData.map((item) => {
+    return<li key={item.id}>
+        <a href={item.href}>
+            {item.title}
+        </a>
+    </li>
+})
+
     return <nav>
         <ul>
-            <li><a href="">home</a></li>
-            <li><a href="">about me</a></li>
-            <li><a href="">blog</a></li>
+            {NavLinks}
         </ul>
         <hr/>
     </nav>
