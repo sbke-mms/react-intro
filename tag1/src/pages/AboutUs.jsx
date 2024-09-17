@@ -3,9 +3,7 @@ import Header from "../components/Header/Header"
 
 const AboutUs = ()=> {
     return <>
-    <Header/>
     <h1>about us page</h1>
-    <Footer/>
     </>
 }
 
