@@ -7,7 +7,7 @@ function BlogOverview({styles}){
         return <BlogItem {...item}  key={item.id}/>
     })
     return (<>
-        <h1 className={styles.blogHeader}>Blog page</h1>
+        <h1 className={`${styles.blogHeader} ${styles.underline}`}>Blog page</h1>
         <div>
             {blogItems}
         </div>
