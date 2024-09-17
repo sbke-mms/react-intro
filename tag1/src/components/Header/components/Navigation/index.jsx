@@ -1,13 +1,10 @@
 import { navData } from "../../../../utils/data/navData"
+import NavItem from "./NavItem"
 
 export default function Navigation (){
 
 const NavLinks = navData.map((item) => {
-    return<li key={item.id}>
-        <a href={item.href}>
-            {item.title}
-        </a>
-    </li>
+    return <NavItem item={item} key={item.id}/>
 })
 
     return <nav>
