@@ -3,9 +3,10 @@ import { blogData } from '../utils/data/blogData'
 
 function SingleArticle() {
     const id = useParams().id;
+    const article =  blogData.find((item) => item.id === id);
     return (<>
-        <h1>{blogData[id].title}</h1>
-        <div>{blogData[id].body}</div>
+        <h1>{article.title}</h1>
+        <div>{article.body}</div>
     </>
     )
 }

@@ -3,8 +3,8 @@ import { blogData } from "../../utils/data/blogData"
 import BlogItem from "./BlogItem.jsx"
 
 function BlogOverview(){
-    const blogItems = blogData.map((item, index) => {
-        return <BlogItem {...item} index={index} key={item.id}/>
+    const blogItems = blogData.map((item) => {
+        return <BlogItem {...item}  key={item.id}/>
     })
     return (<>
         <div>BlogOverview</div>

@@ -1,9 +1,8 @@
 import { NavLink } from 'react-router-dom'
 
-function BlogItem({title, body,index}) {
-    console.log(index)
+function BlogItem({title, body, id}) {
     return <>
-    <NavLink to={`${index}`}><h1>{title}</h1></NavLink>
+    <NavLink to={`${id}`}><h1>{title}</h1></NavLink>
     <div>{body}</div>
     </>
 }
