@@ -1,6 +1,7 @@
-const Paragraph = () => {
+const Paragraph = (props ) => {
+    console.log("props: ",props)
     return <>
-    <p>hallo paragraph</p>
+    <p>{props.text}</p>
     </>;
     
 }
