@@ -2,12 +2,12 @@
 import { blogData } from "../../utils/data/blogData"
 import BlogItem from "./BlogItem.jsx"
 
-function BlogOverview(){
+function BlogOverview({styles}){
     const blogItems = blogData.map((item) => {
         return <BlogItem {...item}  key={item.id}/>
     })
     return (<>
-        <div>BlogOverview</div>
+        <h1 className={styles.blogHeader}>Blog page</h1>
         <div>
             {blogItems}
         </div>

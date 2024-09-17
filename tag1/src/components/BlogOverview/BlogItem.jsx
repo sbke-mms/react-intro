@@ -4,6 +4,7 @@ function BlogItem({title, body, id}) {
     return <>
     <NavLink to={`${id}`}><h1>{title}</h1></NavLink>
     <div>{body}</div>
+    <hr/>
     </>
 }
 

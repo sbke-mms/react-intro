@@ -1,9 +1,9 @@
 import BlogOverview from "../components/BlogOverview"
+import styles from '../styles/blog.module.css'
 
 const Blog = ()=> {
     return <>
-    <h1>Blog page</h1>
-    <BlogOverview/>
+    <BlogOverview styles={styles}/>
     </>
 }
 
