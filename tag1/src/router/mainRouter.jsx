@@ -7,7 +7,8 @@ export const mainRouter = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<MainLayout/>}>
             <Route index element={<Homepage/>}/> //index for rootpath
-            <Route path='aboutus' element={<AboutUs/>}/>
+            <Route path="aboutus" element={<AboutUs/>}/>
+            <Route path="*" element={<h1>404 Page Not Found</h1>}/>
         </Route>
     )
 )
