@@ -1,10 +1,9 @@
 import { NavLink } from 'react-router-dom'
 
-function BlogItem({title, body, id}) {
+function BlogItem({title, id, styles}) {
     return <>
-    <NavLink to={`${id}`}><h1>{title}</h1></NavLink>
-    <div>{body}</div>
-    <hr/>
+    <NavLink to={`${id}`} className={`${styles.blogLink}`}>{title}</NavLink>
+    <hr className={styles.itemDivider}/>
     </>
 }
 

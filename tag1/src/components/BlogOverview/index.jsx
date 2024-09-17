@@ -4,7 +4,7 @@ import BlogItem from "./BlogItem.jsx"
 
 function BlogOverview({styles}){
     const blogItems = blogData.map((item) => {
-        return <BlogItem {...item}  key={item.id}/>
+        return <BlogItem {...item} styles={styles} key={item.id}/>
     })
     return (<>
         <h1 className={`${styles.blogHeader} ${styles.underline}`}>Blog page</h1>

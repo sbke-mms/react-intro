@@ -1,10 +1,36 @@
+
  
+.articleHeader {
+    font-size: 2rem ;
+    font-weight: bold;
+    color: rgb(105, 105, 209);
+} 
+
+.articleBody {
+    font-size: 1rem ;
+    font-weight: bold;
+    color: rgb(177, 85, 161);
+}
+
+.itemDivider {
+    color: rgb(105, 105, 209);
+}
+
 .blogHeader {
     font-size: 4rem ;
     font-weight: bold;
     color: green;
 }
 
+.blogLink {
+    font-size: 4rem ;
+    font-weight: bold;
+    color: green;
+}
+
+a {
+    color: green;
+}
 .underline {
     text-decoration: underline;
 }
