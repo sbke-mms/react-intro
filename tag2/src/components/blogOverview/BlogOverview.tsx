@@ -10,11 +10,23 @@ type BlogArticle = {
 function BlogOverview() {
 
     const [posts, setPosts] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
+    const [error, setError] =useState(false)
 
     useEffect( () => {
-        fetch('https://jsonplaceholder.typicode.com/posts')
+        setIsLoading(true)
+        fetch('https://jsonplaceholder.typde.com/posts')
         .then(res => res.json())
-        .then(data => setPosts(data))
+        .then(data => 
+            setTimeout(()=> {
+                setPosts(data)
+                setIsLoading(false)
+            },1500
+            )
+        ).catch((err) => {
+            console.log("error", err)
+            setError(true)
+        }).finally(()=>setIsLoading(false))
     }, [])
 
     const PostList = posts.map((post:BlogArticle) => {
@@ -22,8 +34,12 @@ function BlogOverview() {
     })
 
     return (
-        <div>BlogOverview
-            {PostList}
+        <div>
+            {isLoading
+                ? <div>is Loading ...</div> 
+                : PostList
+            }
+            {error && <div>error</div>}
         </div>
         
     )
