@@ -1,8 +1,9 @@
+import React from 'react'
 
-function Button({title}:{title:string}) {
+function Button({children}:{children :React.ReactNode}) {
   return <>
     <button>
-        {title}
+        {children}
     </button>
   </>
 }
