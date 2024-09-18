@@ -9,7 +9,13 @@ function Homepage() {
     </div>
     <Button><div>blabla</div><div>blabla</div></Button>
     <hr/>
-    <Button2 backgroundColor="red" color="white" borderColor="green"/>
+    <Button2 style = {{backgroundColor:"red", 
+      color:"white",
+       borderColor:"green",
+        padding:"10px",
+        borderRadius:"10px",
+        boxShadow:"3px 3px black"}}
+        title="Download"/>
   </>
 }
 

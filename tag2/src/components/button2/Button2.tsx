@@ -1,16 +1,18 @@
-type ColorPalete = "red"|"green"|"white"
+type ColorPalate = "white" | "green" | "red"
 
 type Button2Types = {
-    backgroundColor: ColorPalete,
-    color:ColorPalete,
-    borderColor:ColorPalete
+    style: React.CSSProperties & {
+        color:ColorPalate,
+        backgroundColor:ColorPalate
+    },
+    title: string
 }
 
-function Button2({backgroundColor, color, borderColor}:Button2Types) {
+function Button2({style, title}:Button2Types) {
     //gleicher name wie css attribut - kurzschreibweise
   return <>
-    <button style={{backgroundColor, color, borderColor}}>
-        click mich
+    <button style={style}>
+        {title}
     </button>
   </>
 }
