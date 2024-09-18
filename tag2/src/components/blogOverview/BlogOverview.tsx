@@ -11,22 +11,24 @@ function BlogOverview() {
 
     const [posts, setPosts] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    const [error, setError] =useState(false)
+    const [error, setError] =useState({state:true, msg:""})
+
+    async function fetchData() {
+        setIsLoading(true)
+        try{
+            const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+            const data = await response.json()
+            setPosts(data)
+        }catch (err) {
+            setError({...error,state:true, msg:"error"})
+            console.log("err ",err)
+        }finally {
+            setIsLoading(false)
+        }
+    }
 
     useEffect( () => {
-        setIsLoading(true)
-        fetch('https://jsonplaceholder.typicode.com/posts')
-        .then(res => res.json())
-        .then(data => 
-            setTimeout(()=> {
-                setPosts(data)
-                setIsLoading(false)
-            },1500
-            )
-        ).catch((err) => {
-            console.log("error", err)
-            setError(true)
-        }).finally(()=>setIsLoading(false))
+        fetchData()
     }, [])
 
     const PostList = posts.map((post:BlogArticle) => {
