@@ -20,6 +20,11 @@ export const navData = [
         id: "1237"
     },
     {
+        title: "blog create",
+        href: "/blog/create",
+        id: "12371"
+    },
+    {
         title: "users",
         href: "/users",
         id: "1238"
