@@ -1,8 +1,10 @@
+import { NavLink } from 'react-router-dom'
 
-function PostItem({title}:{title:string}) {
+function PostItem({title, id}:{title:string, id:string}) {
   return (
     <div style={{border:"3px solid lightgray", borderRadius:"8px", margin:"3px",}}>
-        <h3>{title}</h3></div>
+        <NavLink to={`${id}`} >{title}</NavLink>
+    </div>
   )
 }
 

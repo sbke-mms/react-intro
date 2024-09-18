@@ -3,7 +3,7 @@ import PostItem from './PostItem'
 
 type BlogArticle = {
     userId: number,
-    id: number,
+    id: string,
     title: string,
     body: string
 }
@@ -32,7 +32,7 @@ function BlogOverview() {
     }, [])
 
     const PostList = posts.map((post:BlogArticle) => {
-        return <PostItem key={post.id} title={post.title}/>
+        return <PostItem key={post.id} title={post.title} id={post.id}/>
     })
 
     return (
