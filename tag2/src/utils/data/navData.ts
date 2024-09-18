@@ -13,5 +13,10 @@ export const navData = [
         title: "Login",
         href: "/login",
         id: "1236"
+    },
+    {
+        title: "blog",
+        href: "/blog",
+        id: "1237"
     }
 ]
