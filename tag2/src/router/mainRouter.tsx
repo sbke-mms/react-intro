@@ -5,6 +5,7 @@ import AboutUs from '../pages/AboutUs.tsx'
 import LoginPage from '../pages/LoginPage.tsx'
 import BlogPage from '../pages/BlogPage.tsx'
 import BlogArticle from '../components/BlogArticle.tsx'
+import ControllerExercise from '../components/controllerExercise/ControllerExercise.tsx'
 
 export const mainRouter = createBrowserRouter(
     createRoutesFromElements(
@@ -16,6 +17,7 @@ export const mainRouter = createBrowserRouter(
                 <Route index element={<BlogPage/>}/>
                 <Route path=':id' element={<BlogArticle/>}/>
             </Route>
+            <Route path='users' element={<ControllerExercise/>}/>
         </Route>
     )
 )

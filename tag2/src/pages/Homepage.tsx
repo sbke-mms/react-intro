@@ -1,5 +1,6 @@
 import Button from "../components/button/Button"
 import Button2 from "../components/button2/Button2"
+import ControllerExercise from "../components/controllerExercise/ControllerExercise"
 
 function handleClick(name:string) {
   console.log("clicked", name)
@@ -24,6 +25,7 @@ function Homepage() {
         borderRadius:"10px",
         boxShadow:"3px 3px black"}}
         title="Download"/>
+    <ControllerExercise />
   </>
 }
 

@@ -18,5 +18,10 @@ export const navData = [
         title: "blog",
         href: "/blog",
         id: "1237"
+    },
+    {
+        title: "users",
+        href: "/users",
+        id: "1238"
     }
 ]
