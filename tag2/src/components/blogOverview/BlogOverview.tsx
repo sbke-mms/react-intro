@@ -15,7 +15,7 @@ function BlogOverview() {
 
     useEffect( () => {
         setIsLoading(true)
-        fetch('https://jsonplaceholder.typde.com/posts')
+        fetch('https://jsonplaceholder.typicode.com/posts')
         .then(res => res.json())
         .then(data => 
             setTimeout(()=> {
