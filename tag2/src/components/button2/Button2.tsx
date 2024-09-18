@@ -5,10 +5,10 @@ type Button2Types = {
         color:ColorPalate,
         backgroundColor:ColorPalate
     },
-    title: string
+    title?: "Save" | "Upload" | "Download"
 }
 
-function Button2({style, title}:Button2Types) {
+function Button2({style, title = "Save"}:Button2Types) {
     //gleicher name wie css attribut - kurzschreibweise
   return <>
     <button style={style}>
