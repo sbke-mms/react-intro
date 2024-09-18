@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Button({children}:{children :React.ReactElement}) {
+function Button({children}:{children :React.ReactElement[]}) {
   return <>
     <button>
         {children}

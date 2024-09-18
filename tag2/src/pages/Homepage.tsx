@@ -6,7 +6,7 @@ function Homepage() {
     <div>
     Lorem ipsum dolor sit amet,
     </div>
-    <Button><p>tada</p></Button>
+    <Button><div>blabla</div><div>blabla</div></Button>
   </>
 }
 
