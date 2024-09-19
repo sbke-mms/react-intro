@@ -6,15 +6,16 @@ import axios from 'axios'
 function QueryExercise() {
     const URL = 'https://jsonplaceholder.typicode.com/posts'
 
+const postData = {
+    title: "hasdkajsd",
+    body:"dfksjdflk"
+}
+
     const {data, isLoading, isError, refetch} = useQuery({
         queryKey:['posts'],
         queryFn: async () => {
             try {
-                return await axios.get(URL, {
-                    params:{
-                        _limit:5
-                    }
-                })
+                return await axios.post(URL, postData)
             } catch (err) {
                 console.log("error", err)
             }
