@@ -10,7 +10,11 @@ function QueryExercise() {
         queryKey:['posts'],
         queryFn: async () => {
             try {
-                return await axios.get(URL)
+                return await axios.get(URL, {
+                    params:{
+                        _limit:5
+                    }
+                })
             } catch (err) {
                 console.log("error", err)
             }
