@@ -8,14 +8,15 @@ function ControllerExercise() {
   useEffect(()=>{
     const controller = new AbortController()
     const signal = controller.signal
-
-    fetch(`https://jsonplaceholder.typicode.com/users/${user}`, 
-      {signal: signal})
-      .then(res => res.json())
-      .then(data => setSelectedUser(data))
-      return () => {
-        controller.abort()
-      }
+    if(user !== 0) {
+      fetch(`https://jsonplaceholder.typicode.com/users/${user}`, 
+        {signal: signal})
+        .then(res => res.json())
+        .then(data => setSelectedUser(data))
+        return () => {
+          controller.abort()
+        }
+    }
   }, [user]) //call on user change
 
   return (
