@@ -1,6 +1,7 @@
 //https://tanstack.com/query/latest/docs/framework/react/reference/useQuery
 
 import { useQuery } from "@tanstack/react-query"
+import axios from 'axios'
 
 function QueryExercise() {
     const URL = 'https://jsonplaceholder.typicode.com/posts'
@@ -8,8 +9,11 @@ function QueryExercise() {
     const {data, isLoading, isError, refetch} = useQuery({
         queryKey:['posts'],
         queryFn: async () => {
-            const response = await fetch(URL)
-            return await response.json()
+            try {
+                return await axios.get(URL)
+            } catch (err) {
+                console.log("error", err)
+            }
         }
     })
 
