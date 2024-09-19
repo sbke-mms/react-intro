@@ -1,6 +1,7 @@
 import Button from "../components/button/Button"
 import Button2 from "../components/button2/Button2"
 import ControllerExercise from "../components/controllerExercise/ControllerExercise"
+import RefExercise from "../components/RefExercise"
 import Item1 from "../components/renderingExercice/Item1"
 import Item2 from "../components/renderingExercice/Item2"
 import RenderingExercise from "../components/renderingExercice/RenderingExercise"
@@ -33,6 +34,8 @@ function Homepage() {
       <Item1/>
       <Item2/>
     </RenderingExercise>
+    <hr/>
+    <RefExercise/>
   </>
 }
 
