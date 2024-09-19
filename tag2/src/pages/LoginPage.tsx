@@ -1,13 +1,14 @@
 import React, { useContext, useState } from "react"
 import { UserContext } from "../store/UserContext"
 import * as yup from 'yup'
+import { useLocalStorage } from "../hooks/useLocalStorage"
 
 function LoginPage() {
 
+    const {setStoredValue} = useLocalStorage("mms-user")
     const userContext = useContext(UserContext)
 
     const INIT_VALUES={email: "", password:""}
-
     const [user, setUser] = useState(INIT_VALUES)
 
     function handleChange(event:{target:{name:string, value:string}}) {
@@ -27,9 +28,10 @@ function LoginPage() {
         event.preventDefault()
         try{
             await LoginSchema.validate(user, {abortEarly:false})
-    
+            const userData = {...user, state:true}
             //contectUpdate
-            userContext?.setUser({...user, state:true})
+            setStoredValue(userData)
+            userContext?.setUser(userData)
             setUser(INIT_VALUES)
             
 
