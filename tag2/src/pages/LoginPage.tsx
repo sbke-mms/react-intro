@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react"
 import { UserContext } from "../store/UserContext"
+import * as yup from 'yup'
 
 function LoginPage() {
 
@@ -13,13 +14,36 @@ function LoginPage() {
         setUser({...user, [event.target.name]:event.target.value})
     }
 
-    function handleSubmit(event:React.FormEvent<HTMLFormElement>) {
-        event.preventDefault()
-        console.log("submitted", user)
+    //validation setup
+    const [errMsg,setErrMsg] = useState({email:"", paassword:""})
+    const LoginSchema = yup.object({
+        email:yup.string().email().required(),
+        password: yup.string().min(8,'too short')
+    })
 
-        //contectUpdate
-        userContext?.setUser({...user, state:true})
-        setUser(INIT_VALUES)
+    //validation setup end
+
+    async function handleSubmit(event:React.FormEvent<HTMLFormElement>) {
+        event.preventDefault()
+        try{
+            await LoginSchema.validate(user, {abortEarly:false})
+    
+            //contectUpdate
+            userContext?.setUser({...user, state:true})
+            setUser(INIT_VALUES)
+            
+
+        }catch(err){
+            userContext?.setUser({...user, state:false})
+            console.log("err", err)
+            if(err instanceof yup.ValidationError){
+                const newErrors = err.inner.reduce ((acc, currentErr)=> {
+                    acc[currentErr.path] = currentErr.message
+                    return acc
+                }, {})
+                setErrMsg(newErrors)
+            }
+        }
     }
 
     //console.log("user", user)
@@ -35,7 +59,9 @@ function LoginPage() {
             name="email" 
             placeholder='bla@example.com'
             value={user.email}
-            onChange={handleChange} />
+            onChange={handleChange} 
+            style={{borderColor: errMsg?.email? "red": ""}}/>
+            {errMsg?.email && <p>{errMsg.email}</p>}
             <br/>
 
         
@@ -43,7 +69,10 @@ function LoginPage() {
         <input id='password' type='text' name="password" 
             value={user.password} 
             placeholder='admin123'
-        onChange={handleChange}/><br/>
+        onChange={handleChange}
+        style={{borderColor: errMsg?.password? "red": ""}}/>
+            {errMsg?.password && <p>{errMsg.password}</p>}
+            <br/>
     
         <button type='submit'>login</button>
     </form>
