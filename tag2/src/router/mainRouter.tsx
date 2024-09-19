@@ -16,7 +16,7 @@ export const mainRouter = createBrowserRouter(
             <Route index element={<Homepage/>}/>
             <Route path='aboutus' element={<AboutUs/>}/>
             <Route path='login' element={<LoginPage/>}/>
-            <Route path='blog' element={<ProtectedRoute user={true}/>}>
+            <Route path='blog' element={<ProtectedRoute/>}>
                 <Route index element={<BlogPage/>}/>
                 <Route path='create' element={<BlogPost/>}/>
                 <Route path=':id' element={<BlogArticle/>}/>

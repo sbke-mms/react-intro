@@ -4,10 +4,10 @@ import { UserContext } from "../../store/UserContext"
 
 function ProtectedRoute() {
 
-    const user = useContext(UserContext)
-    console.log("user", user)
+    const userContext = useContext(UserContext)
+    console.log("user", userContext)
 
-    if(!user){
+    if(!userContext?.user.state){
         return <>
             <Navigate to="/login" replace/>
         </>

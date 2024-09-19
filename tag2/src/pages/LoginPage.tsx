@@ -1,6 +1,9 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
+import { UserContext } from "../store/UserContext"
 
 function LoginPage() {
+
+    const userContext = useContext(UserContext)
 
     const INIT_VALUES={email: "", password:""}
 
@@ -13,6 +16,9 @@ function LoginPage() {
     function handleSubmit(event:React.FormEvent<HTMLFormElement>) {
         event.preventDefault()
         console.log("submitted", user)
+
+        //contectUpdate
+        userContext?.setUser({...user, state:true})
         setUser(INIT_VALUES)
     }
 
